@@ -9,7 +9,7 @@ namespace EMSPackageTest.Controllers;
 
 public class ReservationController : ControllerBase
 {
-    [HttpPost("create")]
+    [HttpPost("CreateReservation")]
     public async Task<IActionResult> Create(EmsCreateReservationDto reservation)
     {
         var httpClient = new HttpClient
