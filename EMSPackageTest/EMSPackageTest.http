@@ -1,0 +1,6 @@
+@EMSPackageTest_HostAddress = http://localhost:5149
+
+GET {{EMSPackageTest_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
