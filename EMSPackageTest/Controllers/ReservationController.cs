@@ -10,7 +10,7 @@ namespace EMSPackageTest.Controllers;
 public class ReservationController : ControllerBase
 {
     [HttpPost("CreateReservation")]
-    public async Task<IActionResult> Create(EmsCreateReservationDto reservation)
+    public async Task<IActionResult> Create([FromBody] EmsCreateReservationDto reservation)
     {
         var httpClient = new HttpClient
         {
@@ -26,7 +26,7 @@ public class ReservationController : ControllerBase
             {"X-De-Password", "123"}
         };
         
-        var result = await client.CreateReservationAsync(new EmsReservationRequestModel(reservation.ReservationDate, reservation.Price, reservation.hasCupon, reservation.EventId, reservation.UserId, "http://localhost:5191", headers));
+        var result = await client.CreateReservationAsync(new EmsReservationRequestModel(reservation.ReservationDate, reservation.Price, reservation.hasCupon, reservation.EventIds, reservation.UserId, "http://localhost:5191", headers));
         return Ok(result);
     }
 }
