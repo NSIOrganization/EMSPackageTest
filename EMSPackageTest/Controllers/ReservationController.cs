@@ -26,7 +26,7 @@ public class ReservationController : ControllerBase
             {"X-De-Password", "123"}
         };
         
-        var result = await client.CreateReservationAsync(new EmsReservationRequestModel(reservation.ReservationDate, reservation.Price, reservation.hasCupon, reservation.EventIds, reservation.UserId, "http://localhost:5191", headers));
+        var result = await client.CreateReservationAsync(new EmsReservationRequestModel(reservation.ReservationDate, reservation.Price, reservation.HasCoupon, reservation.EventIds, reservation.UserId, "http://localhost:5191", headers));
         return Ok(result);
     }
 }
